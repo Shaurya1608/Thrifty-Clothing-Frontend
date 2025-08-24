@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for modern UI */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  /* Section styles */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  /* Text shadow */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Custom animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+  
+  /* Hero carousel animations */
+  .hero-slide-enter {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  
+  .hero-slide-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+  }
+  
+  .hero-slide-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .hero-slide-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+  }
+  
+  /* Mobile menu styles */
+  .mobile-menu {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-50;
+  }
+  
+  .mobile-menu-content {
+    @apply absolute right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Loading spinner */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+  }
+  
+  /* Product card hover effects */
+  .product-card {
+    @apply group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2;
+  }
+  
+  /* Category grid hover effects */
+  .category-card {
+    @apply group relative aspect-square overflow-hidden bg-gray-800 hover:scale-105 transition-transform duration-500;
+  }
+  
+  /* Hero section overlay */
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+  }
+  
+  /* Modern typography */
+  .modern-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+  }
+  
+  .modern-subtitle {
+    @apply text-lg md:text-xl font-light tracking-wider;
+  }
+  
+  .modern-description {
+    @apply text-lg md:text-xl font-light leading-relaxed;
+  }
+  
+  /* Button hover effects */
+  .btn-modern {
+    @apply inline-block bg-white text-black px-8 py-4 text-lg font-semibold tracking-wide hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105;
+  }
+  
+  /* Navigation hover effects */
+  .nav-link {
+    @apply text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group;
+  }
+  
+  .nav-link::after {
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
+    content: '';
+  }
+}
