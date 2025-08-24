@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: '/api', // This will use the proxy configuration from package.json
+  baseURL: process.env.REACT_APP_API_URL || 'https://thrifty-clothing-backend-1.onrender.com/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
